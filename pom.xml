@@ -33,16 +33,16 @@
     <dependencies>
 
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hibernate</groupId>
-                    <artifactId>hibernate-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.hibernate</groupId>-->
+                    <!--<artifactId>hibernate-core</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
 
         <!--jdbc-->
         <dependency>
@@ -72,6 +72,12 @@
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
             <version>${tkmybatis.starter.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>persistence-api</artifactId>
+                    <groupId>javax.persistence</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
 
@@ -134,25 +140,25 @@
 
 
          <!--https://mvnrepository.com/artifact/org.activiti/activiti-engine-->
-        <dependency>
-            <groupId>org.activiti</groupId>
-            <artifactId>activiti-engine</artifactId>
-            <version>7-201802-EA</version>
-        </dependency>
-
-
-         <!--activiti spring-->
-        <dependency>
-            <groupId>org.activiti</groupId>
-            <artifactId>activiti-spring</artifactId>
-            <version>7-201802-EA</version>
-        </dependency>
-
         <!--<dependency>-->
             <!--<groupId>org.activiti</groupId>-->
-            <!--<artifactId>activiti-spring-boot-starter-basic</artifactId>-->
-            <!--<version>6.0.0</version>-->
+            <!--<artifactId>activiti-engine</artifactId>-->
+            <!--<version>7-201802-EA</version>-->
         <!--</dependency>-->
+
+
+         <!--&lt;!&ndash;activiti spring&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.activiti</groupId>-->
+            <!--<artifactId>activiti-spring</artifactId>-->
+            <!--<version>7-201802-EA</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <version>6.0.0</version>
+        </dependency>
 
         <!--lombok-->
         <dependency>
@@ -208,6 +214,12 @@
                         <groupId>tk.mybatis</groupId>
                         <artifactId>mapper</artifactId>
                         <version>${tkmybatis.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <artifactId>persistence-api</artifactId>
+                                <groupId>javax.persistence</groupId>
+                            </exclusion>
+                        </exclusions>
                     </dependency>
                 </dependencies>
             </plugin>
